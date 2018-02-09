@@ -21,6 +21,7 @@ Results:
 
 ![Graph 1](https://github.com/kerwinchen31/PeanutMargarine/blob/master/Screenshot%202018-02-09%2001.41.37.png)
 ![Graph 2](https://github.com/kerwinchen31/PeanutMargarine/blob/master/Screenshot%202018-02-09%2001.41.47.png)
+![Graph](chart.png)
 
 Conclusions:
 *analyze the raw data, stay concise*
