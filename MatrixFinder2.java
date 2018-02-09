@@ -13,20 +13,18 @@ public class MatrixFinder2
 	}
     }
     
-    public static long roar(int[][] matrix, int target){
+    public static void roar(int[][] matrix, int target){
 	String retStr = "(-1,-1)";
 	int dimension = matrix.length - 1;
 	int x = 0;
 	int y = dimension;
         long past, current;
 	past = System.nanoTime();
-	System.out.println("dimension is" + dimension);
-	System.out.println(past);
-	int counter = 0;
+	//System.out.println(dimension);
+	//System.out.print(", ");
 	try
 	  {
 		while (matrix[x][y] != target){
-		    counter++;
 		    if (matrix[x][y] < target) {
 			x += 1;
 		    }
@@ -38,13 +36,11 @@ public class MatrixFinder2
 		    retStr = "(" + x + "," + y + ")";
 		}
 		current =  System.nanoTime();
-		System.out.println(current);
-		System.out.println("counter: " + counter);
-		return current - past;
+		System.out.println(dimension + ", " + (current - past));
 	  }
 	catch(Exception e)
 	  {
-	      return -1;
+	      System.out.println(-1);
 	  }
     }
  
@@ -68,10 +64,12 @@ public class MatrixFinder2
         System.out.println(roar(matrixO, 3));
         System.out.println(roar(matrixO, 1));
 	*/
-	
-	int[][] x = new int[15000][15000];
-	MatrixFinder2.populate(x);
-	System.out.println(roar(x, 136));
+	int q = 5000;
+	for (int x = 1000; x < q; x += 200){
+	    int[][] k = new int[x][x];
+	    MatrixFinder2.populate(k);
+	    roar(k, 2 * x * (x - 1));
+	}
 	
     }
 }
