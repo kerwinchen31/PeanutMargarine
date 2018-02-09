@@ -5,12 +5,12 @@
 /*Our algorithm sort of works like a backwards L. Begin at the top right corner of the matrix. If the value in the matrix is smaller than the target, move down one row and check again. Once you get to a value in that last column that is larger than the target, stay in that row and move to the left, checking if the value is greater than the target. This way, you will find the target if it exists, otherwise, you will see (-1,-1) be returned. */
 public class MatrixFinder2
 {
-    public static double roar(int[][] matrix, int target){
+    public static long roar(int[][] matrix, int target){
 	String retStr = "(-1,-1)";
 	int dimension = matrix.length - 1;
 	int x = 0;
 	int y = dimension;
-	double past = System.currentTimeMillis();
+        long past = System.currentTimeMillis();
 	try
 	    {
 		while (matrix[x][y] != target){
@@ -31,7 +31,7 @@ public class MatrixFinder2
     }
  
     public static void main(String[] args) {
-	/*
+	
 	int[][] matrix = {{1,2,3}, {2,3,4}, {3,4,5}};
         System.out.println(roar(matrix, 4));
         System.out.println(roar(matrix, 9));
@@ -49,7 +49,7 @@ public class MatrixFinder2
         int[][] matrixO = {{1}};
         System.out.println(roar(matrixO, 3));
         System.out.println(roar(matrixO, 1));
-	*/
+	
 	/*
 	BigMatrix x = new BigMatrix(1000);
 	*/
