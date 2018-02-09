@@ -36,5 +36,10 @@ public class BigMatrix
 	}
 	return ans;
     }
+    public static void main(String[] arg)
+    {
+	BigMatrix x = new BigMatrix(12);
+	System.out.println(x);
+    }
 }
 		    

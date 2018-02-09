@@ -36,7 +36,7 @@ public class MatrixFinder2
 		    retStr = "(" + x + "," + y + ")";
 		}
 		current =  System.nanoTime();
-		System.out.println(dimension + ", " + (current - past));
+		System.out.println(/*dimension + ", " + */(current - past));
 	  }
 	catch(Exception e)
 	  {
@@ -64,7 +64,7 @@ public class MatrixFinder2
         System.out.println(roar(matrixO, 3));
         System.out.println(roar(matrixO, 1));
 	*/
-	int q = 5000;
+	int q = 50000;
 	for (int x = 1000; x < q; x += 200){
 	    int[][] k = new int[x][x];
 	    MatrixFinder2.populate(k);
