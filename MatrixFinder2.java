@@ -69,7 +69,7 @@ public class MatrixFinder2
         System.out.println(roar(matrixO, 1));
 	*/
 	
-	int[][] x = new int[10000][10000];
+	int[][] x = new int[15000][15000];
 	MatrixFinder2.populate(x);
 	System.out.println(roar(x, 136));
 	

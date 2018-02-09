@@ -17,7 +17,8 @@ For timing, we will start off by giving a long the value of currentTimeMillis. I
 We will begin experimentation by using the same matrix and the same target many times, just to ensure that our search is really linear, before we start trying to randomly generate or enlarge the matrices.
 
 Results:
-*graphs*
+Screenshot 2018-02-09 01.41.37.png
+Screenshot 2018-02-09 01.41.47.png
 
 Conclusions:
 *analyze the raw data, stay concise*
