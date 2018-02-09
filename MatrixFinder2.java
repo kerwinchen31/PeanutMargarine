@@ -1,19 +1,32 @@
-//Peanut Margarine (Henry Carver, Kerwin Chen, Clarence Chang)
-//APCS2 Pd1
-//HW03 -- I Am Still Searching
-//2018-02-02
 /*Our algorithm sort of works like a backwards L. Begin at the top right corner of the matrix. If the value in the matrix is smaller than the target, move down one row and check again. Once you get to a value in that last column that is larger than the target, stay in that row and move to the left, checking if the value is greater than the target. This way, you will find the target if it exists, otherwise, you will see (-1,-1) be returned. */
 public class MatrixFinder2
 {
+   public static void populate(int[][] x)
+    {
+	int n = 0;
+	for(int q = 0; q < x.length; q++){
+	    for(int p = 0; p < x.length; p++)
+		{
+		    x[q][p] = n;
+		    n +=2;
+		}
+	}
+    }
+    
     public static long roar(int[][] matrix, int target){
 	String retStr = "(-1,-1)";
 	int dimension = matrix.length - 1;
 	int x = 0;
 	int y = dimension;
-        long past = System.currentTimeMillis();
+        long past, current;
+	past = System.nanoTime();
+	System.out.println("dimension is" + dimension);
+	System.out.println(past);
+	int counter = 0;
 	try
-	    {
+	  {
 		while (matrix[x][y] != target){
+		    counter++;
 		    if (matrix[x][y] < target) {
 			x += 1;
 		    }
@@ -24,14 +37,19 @@ public class MatrixFinder2
 		if (matrix[x][y] == target) {
 		    retStr = "(" + x + "," + y + ")";
 		}
-		return System.currentTimeMillis() - past;
-	    }
+		current =  System.nanoTime();
+		System.out.println(current);
+		System.out.println("counter: " + counter);
+		return current - past;
+	  }
 	catch(Exception e)
-	    {return 5;}
+	  {
+	      return -1;
+	  }
     }
  
     public static void main(String[] args) {
-	
+	/*
 	int[][] matrix = {{1,2,3}, {2,3,4}, {3,4,5}};
         System.out.println(roar(matrix, 4));
         System.out.println(roar(matrix, 9));
@@ -49,10 +67,11 @@ public class MatrixFinder2
         int[][] matrixO = {{1}};
         System.out.println(roar(matrixO, 3));
         System.out.println(roar(matrixO, 1));
-	
-	/*
-	BigMatrix x = new BigMatrix(1000);
 	*/
+	
+	int[][] x = new int[10000][10000];
+	MatrixFinder2.populate(x);
+	System.out.println(roar(x, 136));
 	
     }
 }
